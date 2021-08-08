@@ -2,22 +2,22 @@ package main
 
 import "log"
 
-type myStruct struct {
+type User struct {
 	FirstName string
-}
-
-func (m *myStruct) printFirstName() string {
-	return m.FirstName
+	LastName string
 }
 
 func main() {
-	var myVar myStruct
-	myVar.FirstName = "awwab"
 
-	myVar2 := myStruct {
-		FirstName: "Danyal",
+	myMap := make(map[string]User)
+
+	me := User {
+		FirstName: "Awwab",
+		LastName: "Tahir",
 	}
 
-	log.Println("myVar is set to", myVar.printFirstName())
-	log.Println("myVar2 is set to", myVar2.printFirstName())
+	myMap["me"] = me
+
+	log.Println(myMap["me"].FirstName, myMap["me"].LastName)
+
 }
