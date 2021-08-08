@@ -1,23 +1,26 @@
 package main
 
-import "log"
-
-type User struct {
-	FirstName string
-	LastName string
-}
+import (
+	"log"
+	"sort"
+)
 
 func main() {
+	var mySlice []int
 
-	myMap := make(map[string]User)
+	mySlice = append(mySlice, 1)
+	mySlice = append(mySlice, 3)
+	mySlice = append(mySlice, 2)
 
-	me := User {
-		FirstName: "Awwab",
-		LastName: "Tahir",
-	}
+	sort.Ints(mySlice)
 
-	myMap["me"] = me
+	log.Println(mySlice)
 
-	log.Println(myMap["me"].FirstName, myMap["me"].LastName)
+	// another way
+	numbers := []int{1,2,3,4,5,6,7}
 
+	log.Println(numbers)
+
+	// only get the range
+	log.Println(numbers[3:5])
 }
